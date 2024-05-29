@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website for travel agency</title>
+    <link rel="icon" type="image/x-icon" href="images/travel.png">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+    hr {
+    color: #fff;
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,.1);
+        }
+
+    caption{
+    font-size: 3.5rem;
+    background: rgba(255, 165, 0, .2);
+    color: var(--orange);
+    border-radius:.5rem ;
+    padding: .2rem 1rem;
+      }
+    audio{
+    border: 2px solid black;
+    border-radius:.5rem ;
+    background-color: limegreen;
+      }
+      .content1 {
+          font-size: 1rem;
+          color: #fff; 
+          border-radius: 5px; 
+    
+         }
+
+      .content1 i:hover {
+        padding: auto;
+        color: orange;
+        margin-right: 5px; 
+            }
+      .fa-phone {
+        color: #fff;
+        display: block;
+        margin-bottom: 5px;
+       }
+       #scroll_to_top {
+  position: fixed;
+  width: 25px;
+  height: 25px;
+  bottom: 50px;
+  right: 30px;
+}
+#scroll_to_top img {
+  width: 25px;
+}
+    </style>
+</head>
+<body>
+    <script src="script.js"></script>
+  
+    <div id="top"></div>
+    <header>
+        
+        <div id="menu-bar" class="fas fa-bars"></div>
+        <a href="#" class="logo"><span>T</span>ravel</a>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#book">réservation</a>
+            <a href="#packages">Paquets</a>
+            <a href="#services">Services</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#review">Commentaires</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="icons">
+            <i class="fas fa-search" id="search-btn" ></i>
+            <i class="fas fa-user" id="login-btn"></i>
+        </div>
+        <form action="" class="search-bar-container">
+            <input  type="search" id="search-bar" placeholder="search here...">
+            <label for="search-bar"  class="fas fa-search"></label>
+        </form>
+
+    </header>
+
+    <div class="login-form-container">
+        <i class="fa fa-times" id="form-close"></i>
+        <form action="">
+            <h3>login</h3>
+            <input type="email" class="box" placeholder="enter your email">
+            <input type="password" class="box" placeholder="enter your password">
+            <input type="submit" class="btn" value="login now" >
+            <input type="checkbox" id="remenber">
+            <label for="remenber">remenber me</label>
+            <p>forget password? <a href="#">click here</a></p>
+            <p>don't have and account? <a href="register now.html" target="_blank">register now</a></p>
+        </form>
+    </div>
+    <section class="home" id="home">
+        <div class="content">
+            <h3>Gaied agence </h3>
+            <p>découvrez de nouveaux endroits avec nous, l'aventure vous attend</p>
+            <a href="https://www.traveltodo.com/blog/?p=7465" class="btn" target="_blank">discover more</a>
+        </div>
+        <div class="controls">
+            <span class="vid-btn active" data-src="vid1.mp4" onclick="changeVideo('vid1.mp4')"></span>
+            <span class="vid-btn" data-src="vid2.mp4" onclick="changeVideo('vid2.mp4')"></span>
+            <span class="vid-btn" data-src="vid3.mp4" onclick="changeVideo('vid3.mp4')"></span>
+            <span class="vid-btn" data-src="vid4.mp4" onclick="changeVideo('vid4.mp4')"></span>
+            <span class="vid-btn" data-src="vid5.mp4" onclick="changeVideo('vid5.mp4')"></span>
+        </div>
+        
+        <div class="video-container">
+            <video src="vid1.mp4" id="video-slider" loop autoplay muted></video>
+        </div> 
+    </section>
+    <section class="book" id="book">
+        <h1 class="heading">
+            <span>b</span>
+            <span>o</span>
+            <span>o</span>
+            <span>k</span>
+            <span class="space"></span>
+            <span>n</span>
+            <span>o</span>
+            <span>w</span>
+        </h1>
+    </section>
+    <div class="row">
+        <div class="image">
+            <img src="images/voyage.jpg" alt="img">
+        </div>
+    
+        <form action="">
+            <div class="inputBox">
+                <h3>où aller</h3>
+                <input type="text" id="name" placeholder="place name">
+            </div>
+            <div class="inputBox">
+                <h3>combien de passagers</h3>
+                <input type="number" id="number" placeholder="number of geusts" min="0" max="21">
+            </div>
+            <div class="inputBox">
+                <h3>Date De Départ</h3>
+                <input type="date" id="date1" >
+            </div>
+            <div class="inputBox">
+                <h3>Date D'arrivée</h3>
+                <input type="date" id="date2" >
+            </div>
+            <input type="submit" class="btn" value="réservez maintenant" onclick="showmessage1()">
+        </form>
+    </div>
+    <section>
+    <table border="2" align="center" style="font-size: 1.5rem;">
+        <caption>Budget pr&eacute;visionnel total par pays</caption>
+        <tr>
+        <th bgcolor="#9FE2BF">Pays</th>
+        <th bgcolor="#9FE2BF">Budget quotidien médian par adulte</th>
+        <th bgcolor="#9FE2BF">Mon budget quotidien
+            médian prévisionnel</th>
+        <th bgcolor="#9FE2BF">Date d'arrivée</th>
+        <th bgcolor="#9FE2BF">Date de Départ</th>
+        <th bgcolor="#9FE2BF">Nombre de jours sur place</th>
+        <th bgcolor="#9FE2BF">Budget prévisionnel par adulte</th>
+        <th bgcolor="#9FE2BF">Budget prévisionnel par enfant</th>
+        <th bgcolor="#9FE2BF">Budget prévisionnel total</th>
+        <th bgcolor="#9FE2BF">Fiabilit&eacute; d'estimation</th>
+        </tr>
+        <tr>
+            <td bgcolor="#6495ED">N&eacute;pal</td>
+            <td>20&#8364;</td>
+            <td>22&#8364;</td>
+            <td>10/07/2024</td>
+            <td>31/07/2024</td>
+            <td>21</td>
+            <td>462&#8364;</td>
+            <td>139&#8364;</td>
+            <td class="total"></td>
+            <td class="fia"></td>
+        </tr>
+        <tr>
+           <td bgcolor="#6495ED">Inde</td>
+           <td>18&#8364;</td>
+           <td>20&#8364;</td>
+           <td>01/08/2024</td>
+           <td>22/08/2024</td>
+           <td>21</td>
+           <td>416&#8364;</td>
+           <td>125&#8364;</td>
+           <td class="total"></td>
+           <td class="fia"></td>
+        </tr>
+        <tr>
+            <td bgcolor="#6495ED">Thailande</td>
+            <td>25&#8364;</td>
+            <td>28&#8364;</td>
+            <td>23/08/2024</td>
+            <td>13/09/2024</td>
+            <td>21</td>
+            <td>548&#8364;</td>
+            <td>173&#8364;</td>
+            <td class="total"></td>
+            <td class="fia"></td>
+        </tr>
+        <tr>
+            <td bgcolor="#6495ED">Indon&eacute;sie</td>
+            <td>23&#8364;</td>
+            <td>25&#8364;</td>
+            <td>14/09/2024</td>
+            <td>5/10/2024</td>
+            <td>21</td>
+            <td>590&#8364;</td>
+            <td>159&#8364;</td>
+            <td class="total"></td>
+            <td class="fia"></td>
+        </tr>
+        <tr>
+            <td bgcolor="#6495ED">Australie</td>
+            <td>55&#8364;</td>
+            <td>61&#8364;</td>
+            <td>06/10/2024</td>
+            <td>27/10/2024</td>
+            <td>21</td>
+            <td>1271&#8364;</td>
+            <td>381&#8364;</td>
+            <td class="total"></td>
+            <td class="fia"></td>
+        </tr>
+        <tr>
+            <td bgcolor="#6495ED">Chili</td>
+            <td>35&#8364;</td>
+            <td>39&#8364;</td>
+            <td>28/10/2024</td>
+            <td>18/11/2024</td>
+            <td>21</td>
+            <td>809&#8364;</td>
+            <td>243&#8364;</td>
+            <td class="total"></td>
+            <td class="fia"></td>
+        </tr>
+        <tr>
+            <td bgcolor="#6495ED">Argentina</td>
+            <td>40&#8364;</td>
+            <td>44&#8364;</td>
+            <td>19/11/2024</td>
+            <td>10/12/2024</td>
+            <td>21</td>
+            <td>924&#8364;</td>
+            <td>277&#8364;</td>
+            <td class="total"></td>
+            <td class="fia"></td>
+        </tr>
+        <tr>
+            <td bgcolor="#6495ED">Bolivie</td>
+            <td>27&#8364;</td>
+            <td>30&#8364;</td>
+            <td>11/12/2024</td>
+            <td>01/01/2025</td>
+            <td>21</td>
+            <td>624&#8364;</td>
+            <td>187&#8364;</td>
+            <td class="total"></td>
+            <td class="fia"></td>
+        </tr>
+        <tr>
+            <td bgcolor="#6495ED">P&eacute;rou</td>
+            <td>29&#8364;</td>
+            <td>32&#8364;</td>
+            <td>02/01/2025</td>
+            <td>23/01/2025</td>
+            <td>21</td>
+            <td>670&#8364;</td>
+            <td>205&#8364;</td>
+            <td class="total"></td>
+            <td class="fia"></td>
+        </tr>
+        <tr>
+            <td bgcolor="#6495ED">Equateur</td>
+            <td>30&#8364;</td>
+            <td>35&#8364;</td>
+            <td>24/01/2025</td>
+            <td>14/02/2025</td>
+            <td>21</td>
+            <td>675&#8364;</td>
+            <td>215&#8364;</td>
+            <td class="total"></td>
+            <td class="fia"></td>
+        </tr>
+        <tr>
+            <td bgcolor="#6495ED">Colombia</td>
+            <td>28&#8364;</td>
+            <td>31&#8364;</td>
+            <td>15/02/2025</td>
+            <td>08/03/2025</td>
+            <td>21</td>
+            <td>647&#8364;</td>
+            <td>194&#8364;</td>
+            <td class="total"></td>
+            <td class="fia"></td>
+        </tr>
+    </table>
+    <button onclick="calculerBudgetTotal()" class="btn">Calculer Budget Total</button>
+    </section>
+    <section class="packages" id="packages">
+        <h1 class="heading">
+            <span>p</span>
+            <span>a</span>
+            <span>c</span>
+            <span>k</span>
+            <span>a</span>
+            <span>g</span>
+            <span>e</span>
+            <span>s</span>
+        </h1>
+        <br><br><br>
+        <div class="box-container">
+         <table border="1">
+            <tr>
+            <div class="box" >
+                <video src="video/video1.mp4" controls muted width="350"></video><br>
+                <audio src="audio/audio1.mp3" controls></audio>
+                <div class="content">
+                    <h3><i class="fas fa-map-marker-alt" ></i>Chypre</h3>
+                    <p>Le dépaysement est total lors d'un voyage à Chypre : eaux turquoise, 
+                    falaises escarpées, magnifiques plages de sable blanc, 
+                    vestiges antiques, monastères, églises, mosquées.</p>
+                    <div class="stars"> 
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="price">$90.00 <span>$120.00</span></div>
+                <a href="#" class="btn">réservez maintenant</a>
+            </div>
+        </tr>
+        <tr>
+            <div class="box" >
+                <video src="video/video2.mp4" controls muted width="350"></video><br>
+                <audio src="audio/audio2.mp3" controls></audio>
+                <div class="content">
+                    <h3><i class="fas fa-map-marker-alt" ></i>Hawaii</h3>
+                    <p>Un voyage à Hawaii vous promet un dépaysement
+                     total entre de superbes plages et des eaux turquoise, 
+                     la culture du surf, les traditions du « aloha spirit » et les paysages 
+                     volcaniques. 
+                     Hawaii offre une diversité et un patrimoine naturel incroyables qu'il 
+                     est difficile d'imaginer sans y être allé.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="price">$90.00 <span>$120.00</span></div>
+                    <a href="#" class="btn">réservez maintenant</a>
+            </div>
+        </tr>
+        <tr>
+            <div class="box" >
+                <video src="video/video3.mp4" controls muted width="350"></video><br>
+                <audio src="audio/audio3.mp3" controls></audio>
+                <div class="content">
+                    <h3><i class="fas fa-map-marker-alt" ></i>Paris</h3>
+                    <p>Paris fascine par son architecture emblématique, ses musées renommés,
+                         sa gastronomie délicieuse et ses boutiques élégantes. La Ville Lumière séduit avec la Tour Eiffel, 
+                         le Louvre et la cathédrale Notre-Dame. Les quais de la Seine offrent une atmosphère romantique, 
+                         et les charmants cafés révèlent la véritable essence de la culture parisienne. Avec son histoire riche et son charme indéniable, 
+                         Paris promet une expérience inoubliable à chaque coin de rue.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="price">$90.00 <span>$120.00</span></div>
+                    <a href="#" class="btn">réservez maintenant</a>
+                </div>
+        </tr>
+        <tr>
+            <div class="box" >
+                <video src="video/video4.mp4" controls muted width="350"></video><br>
+                <audio src="audio/audio4.mp3" controls></audio>
+                <div class="content">
+                    <h3><i class="fas fa-map-marker-alt"></i>Tokyo</h3>
+                    <p>
+                        Tokyo, au Japon, offre une évasion totale avec ses gratte-ciels modernes,
+                        ses temples anciens, ses jardins zen et ses marchés animés. Les quartiers variés, 
+                        de Shibuya à Akihabara, offrent une expérience captivante entre tradition et modernité.
+                        La diversité culturelle, les coutumes fascinantes et l'énergie constante font de Tokyo une
+                        destination inoubliable pour les voyageurs du monde entier.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="price">$90.00 <span>$120.00</span></div>
+                    <a href="#" class="btn">réservez maintenant</a>
+                </div>
+        </tr>
+
+        <tr>
+            <div class="box" >
+                <video src="video/video5.mp4" controls muted width="350"></video><br>
+                <audio src="audio/audio5.mp3" controls></audio>
+                <div class="content">
+                    <h3><i class="fas fa-map-marker-alt" ></i>Egypt</h3>
+                    <p>L'Égypte est connue surtout comme le berceau de la civilisation égyptienne 
+                        antique, avec ses temples, hiéroglyphes, momies et, les plus courues, ses pyramides. 
+                        Ce qui l'est moins, reste son patrimoine médiéval, la courtoisie du christianisme copte 
+                        et de l'Islam, les anciennes églises, les monastères et les mosquées dessinent le paysage égyptien.
+                         L'Égypte stimule l'imagination des touristes occidentaux comme peu d'autres pays et est probablement 
+                         l'une des destinations touristiques les plus populaires au monde.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="price">$90.00 <span>$120.00</span></div>
+                <a href="#" class="btn">réservez maintenant</a>
+                </div> 
+            </tr>
+            <tr>
+                <div class="box" >
+                    <video src="video/video6.mp4" controls muted width="350"></video><br>
+                    <audio src="audio/audio6.mp3" controls></audio>
+                    <div class="content">
+                        <h3><i class="fas fa-map-marker-alt" ></i>Singapour</h3>
+                        <p>Singapour offre une expérience tout aussi dépaysante :
+                             gratte-ciels scintillants, jardins luxuriants, quartiers animés, 
+                             et une fusion harmonieuse de cultures asiatiques. Chinatown, Little 
+                             India et Kampong Glam dévoilent une diversité fascinante, tandis que 
+                             Marina Bay ajoute une touche futuriste. La gastronomie de rue, les marchés
+                              animés et les temples anciens contribuent à créer une atmosphère unique. 
+                              Avec son mélange vibrant de traditions et de modernité, Singapour promet 
+                              une aventure captivante à chaque coin de rue.
+                        </p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="price">$90.00 <span>$120.00</span></div>
+                    <a href="#" class="btn">réservez maintenant</a>
+                    </div> 
+        </tr>    
+            </table>
+        </div>
+    </section>
+    <section class="services" id="services">
+        <h1 class="heading">
+        <span>s</span>
+        <span>e</span>
+        <span>r</span>
+        <span>v</span>
+        <span>i</span>
+        <span>c</span>
+        <span>e</span>
+        <span>s</span>
+        </h1>
+        <div class="box-container">
+            <div class="box">
+                <i class="fas fa-hotel"></i>
+                <h3>hôtels confortables</h3>
+                 <p>Notre hôtel est économique offre des équipements et des services minimaux à un coût inférieur à celui des hôtels classiques de la région.
+                 Il propose des chambres propres et sûres qui répondent aux besoins fondamentaux des clients. Des équipements supplémentaires peuvent être disponibles moyennant des frais supplémentaires.</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-utensils"></i>
+                <h3>Nourriture et boissons</h3>
+                <p>Le service de restauration est l'un des plus importants d'un hôtel, jouant un rôle clé dans les opérations quotidiennes.</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-bullhorn"></i>
+                <h3>guide de sécurité</h3>
+                <p>Que vous voyagiez souvent ou que vous vous prépariez pour des vacances uniques, la sécurité est cruciale lors de la préparation d'un voyage.
+                Ces conseils peuvent aider les voyageurs à planifier un voyage sûr et confortable, réduisant ainsi le risque de divers crimes, y compris la violence sexuelle.</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-globe-asia"></i>
+                <h3>dans le monde entier</h3>
+                <p>Voyager à travers le monde, c'est s'ouvrir à de nouvelles expériences, quitter courageusement le confort de sa maison pour explorer l'inconnu,
+                découvrir différentes cultures et coutumes. Cela signifie également se mettre au défi d'apprendre de nouvelles choses et devenir plus tolérant à l'égard d'autres façons de penser.</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-plane"></i>
+                <h3>voyage le plus rapide</h3>
+                <p>Pendant votre transit, vous n'avez pas besoin de respecter les horaires de jeûne de votre pays de départ ou d'arrivée.
+                Par exemple, si vous êtes dans un avion, rompez le jeûne lorsque vous voyez le soleil se coucher depuis votre position actuelle. Tant que la nuit est tombée là où vous êtes, tout va bien.</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-hiking"></i>
+                <h3>aventure</h3>
+                 <p>Les voyages d'aventure sont l'occasion d'explorer des destinations préférées tout en découvrant de nouvelles compétences, passions et amis pour la vie.
+                 C’est un défi physique, mental et émotionnel de la meilleure façon possible. Il s'agit de gravir les plus hauts sommets, d'apprendre les langues locales,
+                 dévaler des montagnes poudreuses, plonger au plus profond de l'histoire et plonger tête première dans les profondeurs de l'océan.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="gallery" id="gallery">
+        <h1 class="heading">
+            <span>g</span>
+            <span>a</span>
+            <span>l</span>
+            <span>l</span>
+            <span>e</span>
+            <span>r</span>
+            <span>y</span>
+            </h1>
+            <div class="box-container">
+                <div class="box">
+                    <img src="images/g-1.jpg" alt="">
+                    <div class="content">
+                        <h3>amazing places</h3>
+                        <p>Lake Louis,Canada</p>
+                        <a href="https://ca.louisvuitton.com/fra-ca/homepage" class="btn" target="_blank">voir plus</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="images/g-2.jpg" alt="">
+                    <div class="content">
+                        <h3>amazing places</h3>
+                        <p>Taj Mahal,India</p>
+                        <a href="https://whc.unesco.org/en/list/252/" class="btn" target="_blank">voir plus</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="images/g-3.jpg" alt="">
+                    <div class="content">
+                        <h3>amazing places</h3>
+                        <p>Reine,Norway</p>
+                        <a href="https://www.switchbacktravel.com/norway/lofoten-islands/reine" class="btn" target="_blank">voir plus</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="images/g-4.jpg" alt="">
+                    <div class="content">
+                        <h3>amazing places</h3>
+                        <p>Cinque terre,Italy</p>
+                        <a href="https://www.lonelyplanet.com/articles/planning-visit-cinque-terre" class="btn" target="_blank">voir plus</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="images/g-5.jpg" alt="">
+                    <div class="content">
+                        <h3>amazing places</h3>
+                        <p>Mount Fujy,Japan</p>
+                        <a href="https://www.britannica.com/place/Mount-Fuji" class="btn" target="_blank">voir plus</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="images/g-6.jpg" alt="">
+                    <div class="content">
+                        <h3>amazing places</h3>
+                        <p>Camp Bey,South Africa</p>
+                        <a href="https://www.campsbayinfo.com/" class="btn" target="_blank">voir plus</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="images/g-7.jpg" alt="">
+                    <div class="content">
+                        <h3>amazing places</h3>
+                        <p>Milford Sound, New Zealand</p>
+                        <a href="https://www.newzealand.com/int/milford-sound/" class="btn" target="_blank">voir plus</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="images/g-8.jpg" alt="">
+                    <div class="content">
+                        <h3>amazing places</h3>
+                        <p>Seljalandsfoss, Iceland</p>
+                        <a href="https://guidetoiceland.is/travel-iceland/drive/seljalandsfoss" class="btn" target="_blank">voir plus</a>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <sction class="review" id="review">
+        <h1 class="heading">
+            <span>r</span>
+            <span>e</span>
+            <span>v</span>
+            <span>i</span>
+            <span>e</span>
+            <span>w</span>
+            </h1>
+            <div class="review-slider">
+                <div class="wrapper">
+                    <div class="slider">
+                        <div class="box">
+                            <img src="images/mohamed mehdi ben ameur.jpg">
+                            <h3>mohamed mehdi ben ameur</h3>
+                            <p>
+                                Expérience vraiment sympa avec Gaied Agence. l'un des agents du service client qui s'appelle Raef Gaied.
+                                il aide beaucoup pour obtenir la meilleure offre. J'ai trouvé très simple la façon dont elle m'a donné toutes les informations pour réserver mon vol.
+                                Je conseille très fortement aux autres voyageurs d'utiliser Gaied Raef. c'est très convivial et facile à utiliser. Merci beaucoup.
+                            </p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                    </div>
+                    </div>
+                    <div class="slider">
+                        <div class="box">
+                            <img src="images/hamdi gaied.jpg">
+                            <h3>Hamdi gaied</h3>
+                            <p>
+                                C'est notre agence de voyage préférée. Sauf la longue attente, ils ont un service client exceptionnel à des prix raisonnables.
+                                Merci pour la réservation facile des vols et des hôtels. Bonnes affaires et services honnêtes. Fortement recommandé à tout le monde.
+                            </p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                    </div>
+                    </div>
+                    <div class="slider">
+                        <div class="box">
+                            <img src="images/jhoe doeh.jpg">
+                            <h3>Jhoe Doeh</h3>
+                            <p>
+                                Ce voyage a été incroyable, dès le premier jour, notre guide était incroyable... attentionné et très compétent.
+                                le vôtre était également incroyable. merci à tous ceux qui ont rendu possible cette expérience inoubliable !.
+                            </p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                    </div>
+                    </div>
+                   
+    </section>
+    <section class="contact" id="contact">
+        <h1 class="heading">
+            <span>c</span>
+            <span>o</span>
+            <span>n</span>
+            <span>t</span>
+            <span>a</span>
+            <span>c</span>
+            <span>t</span>
+            </h1>
+            <div class="row">
+                <div class="image">
+                    <img src="images/contact.png" alt="img" 
+                    style="max-width: 300px; float: right;
+                    border: 3px solid white;
+                    margin-right: 5px;
+                    left: 100px;
+                    right: 0px;
+                    height: 600px;">
+                </div>
+                <form>
+                    <table border="0">
+                    <tr class="inputBox">
+                        <td width="350"><input type="text" placeholder="name" id="name"></td>
+                        <td width="350"><input type="number" id="number" placeholder="number" min="0" ></td>
+                    </tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr class="inputBox">
+                    <td width="350"><input type="email" id="email" placeholder="email" required></td>
+                    <td width="350"><input type="text" id="subject"  placeholder="subject"></td>
+                    </tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr class="inputBox">
+                        <td>
+                             <textarea placeholder="Write a message here" id="message" cols="30" rows="10"></textarea>
+                             <input type="submit" class="btn" value="send message" onclick="showmessage()">
+                        </td>
+                    </tr>   
+                    </table>
+                </form>
+            </div>
+    </section>
+     <section class="brand-container">
+        <marquee class="swipper" behavior="scroll" direction="left" width="100%">
+            
+            <div class="swiper-slide"><img src="images/1.png" alt="image1"></div>           
+            <div class="swiper-slide"><img src="images/2.png" alt="image2"></div>
+            <div class="swiper-slide"><img src="images/3.png" alt="image3"></div>
+            <div class="swiper-slide"><img src="images/4.jpeg" alt="image4"></div>
+            <div class="swiper-slide"><img src="images/5.png" alt="image5"></div>
+            <div class="swiper-slide"><img src="images/6.jpg" alt="image6"></div>
+            <div class="swiper-slide"><img src="images/7.jpg" alt="image7"></div>
+               
+        </marquee>
+     </section>
+     <div >
+        <!--<a href="#top" ><img src="images/top .png" alt="Retourner en haut" class="bouton plein rightT TOPF"/></a>-->
+        <a class="bouton plein rightT TOPF" href="#top">TOP</a>
+    </div>
+
+     <footer class="footer">
+        <div class="box-container">
+            <aside class="box">
+                <h3>À propos de nous</h3>
+                <article>Bienvenue chez Gaied Agence, fondée par Raef Gaied . 
+                Forts de leur expertise combinée dans l'industrie du voyage, ils créent une expérience unique pour les voyageurs du monde entier. 
+                Notre mission est de transcender les attentes en offrant des itinéraires exceptionnels, une hospitalité incomparable et des aventures inoubliables,
+                 avec un engagement envers l'excellence et la satisfaction du client. Nous nous efforçons de créer des souvenirs durables.
+                <p style="color: #fff;"> si vous souhaitez savoir plus de notre agence, contactez-nous à : <a href="#">gaiedagence@nexopos.com</a></p>
+                </article>
+                <div class="content1"><i class="fas fa-map-marker-alt" style="color: var(--orange); font-weight: bold;" >route ceinture sahloul 4021 – sousse Tunisie.</i></div><br>
+                <div><i class="fa fa-phone">(+216) 73 277 877</i></div><br>
+                <div><i class="fa fa-phone">(+216) 54 339 700 </i></div>
+            </aside>
+            <div class="box">
+                <h3>branch locations</h3>
+                <ul>
+                    <li><a href="https://www.voyageinindia.fr/" target="_blank">India</a></li>
+                    <li><a href="https://www.evasionsusa.com/nos-inspirations-voyages" target="_blank">USA</a></li>
+                    <li><a href="https://keikaku.fr/" target="_blank">Japan</a></li>
+                    <li><a href="https://www.havas-voyages.fr/" target="_blank">France</a></li>
+                </ul>
+            </div>
+            <div class="box">
+                <h3>Quick links</h3>
+                <ol>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">réservation</a></li>
+                    <li><a href="#">Paquets</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Commentaires</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ol>
+            </div>
+            <div class="box">
+                <h3>Follow us</h3>
+                <div>
+                <a href="#" class="icon facebook">
+                  <span><i class="fab fa-facebook"></i></span>
+                </a>
+                </div>
+                <div>
+                <a href="#" class="icon twitter">
+                  <span><i class="fa-brands fa-x-twitter"></i></span>
+                </a>
+                </div>
+                <div>
+                <a href="#" class="icon instagram">
+                  <span><i class="fab fa-instagram"></i></span>
+                </a>
+                </div>
+                <div>
+                <a href="https://github.com/RaefGaied/mon-projet" class="icon github" target="_blank">
+                  <span><i class="fab fa-github"></i></span>
+                </a>
+                </div>
+                <div>
+                <a href="https://www.youtube.com/channel/UCtl4P1NFuC97q8kQkOR2j8Q" class="icon youtube" target="_blank#">
+                  <span><i class="fab fa-youtube"></i></span>
+                </a>
+              </div>
+        </div>
+
+        
+        <h1 class="credit" align="left">created by <span>mr.Raef Gaied 2023/2024 </span> ! all rights reserved ! </h1></hr>
+
+     </footer>
+     
+
+</body>
+</html>
